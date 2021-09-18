@@ -20,6 +20,6 @@ public class Controller implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("Button"))
-            view.getJlabel().setText(number.isCorrect(Integer.parseInt(view.getTextField().getText())));
+            view.getJlabel().setText(number.isCorrect(view.getTextField().getText()));
     }
 }

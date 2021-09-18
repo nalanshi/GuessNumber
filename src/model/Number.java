@@ -8,6 +8,7 @@ import java.util.Random;
  * @project GuessNumber
  */
 public class Number {
+    private int number;
     private int guessNumber;
     private int chanceUsed = 0;
     private int maxChance;
@@ -19,7 +20,12 @@ public class Number {
 
 
 
-
+    public boolean isNumber(String text){
+        for(char i : text.toCharArray() ){
+            if(i > 57 || i < 48) return false;
+        }
+        return true;
+    }
     
     public void genNewNumber() {
     	chanceUsed = 0;
@@ -28,9 +34,13 @@ public class Number {
     public int getChance() {
     	return chanceUsed;
     }
-    public String isCorrect(int number){
-    	
-    	String frase = "";
+    public String isCorrect(String number1){
+        String frase = "";
+        if(!isNumber(number1)){
+            return "????????????  numberi !!!!!!!!!!!!!!!! ???????????";
+        }
+
+        int number = Integer.parseInt(number1);
         if(number > guessNumber) {
             chanceUsed++;
             frase =  "<html>il numero e piu piccolo" + " Tentativi = " + chanceUsed + "</html>";
