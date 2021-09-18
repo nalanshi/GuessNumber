@@ -18,7 +18,7 @@ import java.awt.event.ActionEvent;
 public class View extends JFrame {
 
 	private JPanel contentPane;
-	private JLabel lblNewLabel = new JLabel("New label");
+	private JLabel lblNewLabel = new JLabel("Guess Number");
 	private model.Number number = new model.Number(10, 5);
 	private JTextField textField = new JTextField();
 	/**
