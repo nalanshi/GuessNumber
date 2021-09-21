@@ -12,8 +12,8 @@ public class Number {
     private int guessNumber;
     private int chanceUsed = 0;
     private int maxChance;
-    public Number(int number,int maxChance){
-        guessNumber = number;
+    public Number(int maxChance){
+        genNewNumber();
         this.maxChance = maxChance;
     }
 

@@ -1,25 +1,20 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controler.Controller;
+import controller.Controller;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class View extends JFrame {
 
 	private JPanel contentPane;
 	private JLabel lblNewLabel = new JLabel("Guess Number");
-	private model.Number number = new model.Number(10, 5);
+	private model.Number number = new model.Number( 5);
 	private JTextField textField = new JTextField();
 	/**
 	 * Launch the application.
