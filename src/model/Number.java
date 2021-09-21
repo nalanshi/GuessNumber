@@ -51,7 +51,7 @@ public class Number {
         }
         else 
         	{
-        	frase = "Hai indovinato dopo " + chanceUsed + " Tentativi";
+        	frase = "<html>Hai indovinato dopo " + chanceUsed + " Tentativi" + "Nuovo numero e stato generato</html>";
             genNewNumber();
         	}
         if(chanceUsed == 5) {
