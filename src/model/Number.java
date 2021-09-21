@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @author Oniichan
@@ -9,7 +10,7 @@ import java.util.Random;
  */
 public class Number {
     private int number;
-    private int guessNumber;
+    private int guessNumber = 0;
     private int chanceUsed = 0;
     private int maxChance;
     public Number(int maxChance){
@@ -29,7 +30,7 @@ public class Number {
     
     public void genNewNumber() {
     	chanceUsed = 0;
-    	guessNumber = (new Random()).nextInt(50);
+    	guessNumber = ThreadLocalRandom.current().nextInt(50);
     }
     public int getChance() {
     	return chanceUsed;
@@ -51,7 +52,7 @@ public class Number {
         }
         else 
         	{
-        	frase = "<html>Hai indovinato dopo " + chanceUsed + " Tentativi" + "\n\n\n\nNuovo numero e stato generato</html>";
+        	frase = "<html>Hai indovinato dopo " + chanceUsed + " Tentativi ! ! ! !" + "\n\n\n\nNuovo numero e stato generato</html>";
             genNewNumber();
         	}
         if(chanceUsed == 5) {
