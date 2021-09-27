@@ -24,7 +24,6 @@ public class Controller implements ActionListener {
         if (e.getActionCommand().equals("Button")) {
             response = number.isCorrect(view.getTextField().getText());
             view.getJlabel().setText(response);
-            Log.logWrite(response.replaceAll("(<html>|</html>)",""));
         }
     }
 }

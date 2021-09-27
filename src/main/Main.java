@@ -5,9 +5,7 @@ import view.View;
 
 import javax.swing.*;
 import java.awt.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 /**
  * @author Oniichan
@@ -26,6 +24,9 @@ public class Main {
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
+                }
+                finally{
+                    Log.logWrite("Game ended");
                 }
             }
         });

@@ -1,6 +1,5 @@
 package model;
 
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -19,8 +18,6 @@ public class Number {
     }
 
 
-
-
     public boolean isNumber(String text){
         for(char i : text.toCharArray() ){
             if(i > 57 || i < 48) return false;
@@ -31,6 +28,7 @@ public class Number {
     public void genNewNumber() {
     	chanceUsed = 0;
     	guessNumber = ThreadLocalRandom.current().nextInt(50);
+        Log.logWrite("new number has been generated");
     }
     public int getChance() {
     	return chanceUsed;
@@ -38,29 +36,30 @@ public class Number {
     public String isCorrect(String number1){
         String frase = "";
         if(!isNumber(number1)){
-            frase = "????????????  numberi !!!!!!!!!!!!!!!! ???????????";
+            frase = " ?????????  numberi !!!!!!!!!!! ?????????";
         }
         else{
 
         int number = Integer.parseInt(number1);
         if(number > guessNumber) {
             chanceUsed++;
-            frase =  "<html>il numero e piu piccolo" + " Tentativi = " + chanceUsed + "</html>";
+            frase =  "il numero e piu piccolo" + " <br>Tentativi = " + chanceUsed;
         }
         if(number < guessNumber) {
         	chanceUsed++;
-            frase =  "<html>il numero e piu grande" + " Tentativi = " + chanceUsed + "</html>";
+            frase =  "il numero e piu grande" + " <br>Tentativi = " + chanceUsed;
         }
         else
         	{
-        	frase = "<html>Hai indovinato dopo " + chanceUsed + " Tentativi ! ! ! !" + "\n\n\n\nNuovo numero e stato generato</html>";
+        	frase = "Hai indovinato dopo " + chanceUsed + " Tentativi ! ! ! !" + "<br>Nuovo numero e stato generato";
             genNewNumber();
         	}
         if(chanceUsed == 5) {
         	genNewNumber();
-        	frase = "<html>non sei riuscito a indovinare il number num = " + guessNumber + "</html>";
+        	frase = "---- non sei riuscito a indovinare il number num = " + guessNumber + " ---- <br>un nuovo numero si e generato" ;
         }
         }
-        return frase +  " ,input = " +number1;
+        Log.logWrite(frase.replaceAll("(<html>|</html>)",""));
+        return "<html>" + frase +  " ,input = " +number1 +"</html>";
     }
 }
