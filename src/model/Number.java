@@ -59,7 +59,7 @@ public class Number {
         	frase = "---- non sei riuscito a indovinare il number num = " + guessNumber + " ---- <br>un nuovo numero si e generato" ;
         }
         }
-        Log.logWrite(frase.replaceAll("(<html>|</html>)",""));
+        Log.logWrite(frase.replaceAll("(<html>|</html>|<br>)",""));
         return "<html>" + frase +  " ,input = " +number1 +"</html>";
     }
 }
