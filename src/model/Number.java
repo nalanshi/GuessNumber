@@ -27,8 +27,8 @@ public class Number {
     
     public void genNewNumber() {
     	chanceUsed = 0;
+        Log.logWrite("new number has been generated , cur_num = " + guessNumber);
     	guessNumber = ThreadLocalRandom.current().nextInt(50);
-        Log.logWrite("new number has been generated");
     }
     public int getChance() {
     	return chanceUsed;
