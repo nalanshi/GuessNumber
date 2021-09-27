@@ -1,9 +1,13 @@
 package main;
 
+import model.Log;
 import view.View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @author Oniichan
@@ -15,6 +19,9 @@ public class Main {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
+                    if(JOptionPane.showConfirmDialog(null,"Do you want to delete Log file?","Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == 0)
+                        Log.deleteLog();
+                    Log.logWrite("Game started");
                     View frame = new View();
                     frame.setVisible(true);
                 } catch (Exception e) {

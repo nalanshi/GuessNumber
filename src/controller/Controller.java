@@ -1,5 +1,6 @@
 package controller;
 
+import model.Log;
 import view.View;
 
 import java.awt.event.ActionEvent;
@@ -19,7 +20,11 @@ public class Controller implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getActionCommand().equals("Button"))
-            view.getJlabel().setText(number.isCorrect(view.getTextField().getText()));
+        String response = null;
+        if (e.getActionCommand().equals("Button")) {
+            response = number.isCorrect(view.getTextField().getText());
+            view.getJlabel().setText(response);
+            Log.logWrite(response.replaceAll("(<html>|</html>)",""));
+        }
     }
 }

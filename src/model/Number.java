@@ -38,8 +38,9 @@ public class Number {
     public String isCorrect(String number1){
         String frase = "";
         if(!isNumber(number1)){
-            return "????????????  numberi !!!!!!!!!!!!!!!! ???????????";
+            frase = "????????????  numberi !!!!!!!!!!!!!!!! ???????????";
         }
+        else{
 
         int number = Integer.parseInt(number1);
         if(number > guessNumber) {
@@ -50,7 +51,7 @@ public class Number {
         	chanceUsed++;
             frase =  "<html>il numero e piu grande" + " Tentativi = " + chanceUsed + "</html>";
         }
-        else 
+        else
         	{
         	frase = "<html>Hai indovinato dopo " + chanceUsed + " Tentativi ! ! ! !" + "\n\n\n\nNuovo numero e stato generato</html>";
             genNewNumber();
@@ -59,6 +60,7 @@ public class Number {
         	genNewNumber();
         	frase = "<html>non sei riuscito a indovinare il number num = " + guessNumber + "</html>";
         }
-        return frase;
+        }
+        return frase +  " ,input = " +number1;
     }
 }
