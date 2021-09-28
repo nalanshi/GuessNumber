@@ -25,5 +25,9 @@ public class Controller implements ActionListener {
             response = number.isCorrect(view.getTextField().getText());
             view.getJlabel().setText(response);
         }
+        if(e.getActionCommand().equals("Log")){
+            response = Log.logRead();
+            view.refreshLog(response);
+        }
     }
 }

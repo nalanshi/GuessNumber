@@ -1,10 +1,10 @@
 package model;
 
+import com.sun.glass.ui.Size;
+
+import javax.activation.FileDataSource;
 import javax.xml.crypto.Data;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -16,7 +16,7 @@ import java.util.Date;
 public class Log {
     public static String filePath;
     public static FileWriter fw;
-    public static FileReader fr;
+    public static FileOpen fr;
     static{
         filePath = "log.txt";
     }
@@ -32,16 +32,8 @@ public class Log {
         }
     }
     public static String logRead(){
-        char read[] = null;
-        try {
-            read = new char[fr.read()];
-            fr = new FileReader(filePath);
-            fr.read(read);
-            fr.close();
-        } catch (Exception e) {
-        }
-        assert read != null;
-        return String.copyValueOf(read);
+        fr = new FileOpen(filePath);
+        return fr.allFile();
     }
     public static void deleteLog(){
         try{
