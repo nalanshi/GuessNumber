@@ -18,7 +18,7 @@ public class Log {
     public static FileWriter fw;
     public static FileOpen fr;
     static{
-        filePath = "log.txt";
+        filePath =  new SimpleDateFormat("dd_MM_yyyy").format(new Date().getTime()) + ".txt";
     }
 
     public static void logWrite(String row){

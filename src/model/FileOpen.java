@@ -94,4 +94,11 @@ public class FileOpen {
 		return data;
 
 	}
+	public static boolean isFile(String path){
+		File file = new File(path);
+		if(file.isFile()){
+			return true;
+		}
+		return false;
+	}
 }
